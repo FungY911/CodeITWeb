@@ -32,65 +32,6 @@
 
 <body>
 
-  <script type="text/javascript">
-    const fs = require('fs');
-
-let responseNavstevnost = fs.readFileSync('./api/getUsers/UsersCount', 'utf-8');
-responseNavstevnost = parseInt(responseNavstevnost);
-let newResponseNavstevnost = responseNavstevnost;
-
-if (responseNavstevnost > 10) {
-newResponseNavstevnost = 10;
-} else if (responseNavstevnost >= 50) {
-newResponseNavstevnost = 50;
-} else if (responseNavstevnost >= 100) {
-newResponseNavstevnost = 100;
-} else if (responseNavstevnost >= 200) {
-newResponseNavstevnost = 200;
-} else if (responseNavstevnost >= 400) {
-newResponseNavstevnost = 400;
-} else if (responseNavstevnost >= 600) {
-newResponseNavstevnost = 600;
-} else if (responseNavstevnost >= 800) {
-newResponseNavstevnost = 800;
-} else if (responseNavstevnost >= 1000) {
-newResponseNavstevnost = 1000;
-} else if (responseNavstevnost >= 6000) {
-newResponseNavstevnost = 6000;
-} else if (responseNavstevnost >= 9000) {
-newResponseNavstevnost = 9000;
-} else if (responseNavstevnost >= 10000) {
-newResponseNavstevnost = 10000;
-} else if (responseNavstevnost >= 50000) {
-newResponseNavstevnost = 50000;
-} else if (responseNavstevnost >= 90000) {
-newResponseNavstevnost = 90000;
-} else if (responseNavstevnost >= 100000) {
-newResponseNavstevnost = 100000;
-} else if (responseNavstevnost >= 900000) {
-newResponseNavstevnost = 500000;
-} else if (responseNavstevnost >= 1000000) {
-newResponseNavstevnost = 900000;
-}
-
-const apikeyNavstevnost = 'ATCYEMBaji1zRqmEugRGzbFR3qSkYIrSc9G2GUZmEsn0PvLwVv';
-const ipAddress = 'http://192.168.100.47';
-const cookieName = 'UsersCount';
-
-if (!(cookieName in document.cookie)) {
-let storageNum = 0;
-storageNum = fs.readFileSync('./api/getUsers/UsersCount', 'utf-8');
-storageNum++;
-fs.writeFileSync('./api/getUsers/UsersCount', storageNum);
-
-document.cookie = ${cookieName}=1; expires=${new Date(Date.now() + (86400 * 366))}; path=/;
-}
-
-if (window.location.search) {
-// Do something with the GET parameters
-}
-  </script>
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
@@ -149,8 +90,9 @@ if (window.location.search) {
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="bi bi-emoji-smile"></i>
-                      <span data-purecounter-start="0" data-purecounter-end="<?php echo $new_response_navstevnost; ?>" data-purecounter-duration="5" class="purecounter"></span>
-                    <p>We have <?php echo $new_response_navstevnost; ?>+ <strong>Happy Clients</strong> what uses our plugins..</p>
+                    <div id="users"></div>
+                      <span data-purecounter-start="0" data-purecounter-end='100' data-purecounter-duration="5" class="purecounter"></span>
+                    <p>We have 100+ <strong>Happy Clients</strong> what uses our plugins..</p>
                   </div>
                 </div>
 
@@ -289,7 +231,7 @@ if (window.location.search) {
       <div class="row d-flex align-items-center">
         <div class="col-lg-6 text-lg-left text-center">
           <div class="copyright">
-            &copy; Copyright <strong>CodeITForFun</strong>. All Rights Reserved
+            &copy; Copyright <strong>codemein.tech</strong>. All Rights Reserved
           </div>
           <div class="credits">
             Created by <a href="https://bootstrapmade.com/">BootstrapMade</a>, Edited by <a href="https://github.com/FungY911/#">FungY911</a>
