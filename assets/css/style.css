@@ -8,6 +8,9 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+html {
+  scroll-behavior: smooth !important;
+}
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
